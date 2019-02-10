@@ -13,6 +13,7 @@
           "style": "sass"
         }
       },
+      
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -27,10 +28,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
+            "es5BrowserSupport": true,
+            "stylePreprocessorOptions" : {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
           },
           "configurations": {
             "production": {
