@@ -5,8 +5,6 @@ const FakeDb = require('./fake-db');
 
 const rentalRoutes = require('./routes/rentals');
 
-require('dotenv').config();
-
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB_URI, { useCreateIndex: true,
     useNewUrlParser: true }).then(()=> {

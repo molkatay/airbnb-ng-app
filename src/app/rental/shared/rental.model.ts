@@ -1,5 +1,5 @@
 export class Rental{
-    id: string;
+    _id: string;
     title: string;
     city: string;
     street: string;
@@ -10,5 +10,4 @@ export class Rental{
     dailyRate:number;
     shared:boolean;
     createdAt: string
-
 }
