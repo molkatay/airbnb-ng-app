@@ -1,9 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const config  = require('./config/dev');
 const FakeDb = require('./fake-db');
 
-const rentalRoutes = require('./routes/rentals');
+
+// Models
+const Rental = require('./models/rental');
+const User = require('./models/user');
+
+
+const rentalRoutes = require('./routes/rentals'),
+      userRoutes = require('./routes/users');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB_URI, { useCreateIndex: true,
@@ -14,10 +22,10 @@ mongoose.connect(config.DB_URI, { useCreateIndex: true,
 
 const app = express();
 
-// Models
-const Rental = require('./models/rental');
+app.use(bodyParser.json());
 
 app.use('/api/v1/rentals', rentalRoutes);
+app.use('/api/v1/users', userRoutes);
 
 
 const PORT = process.env.PORT || 3001;
