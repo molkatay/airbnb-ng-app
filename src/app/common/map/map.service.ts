@@ -38,8 +38,7 @@ export class MapService {
             });
         });
     }
-
-    public getGeoLocation(location: string):Observable<any>{
+    public getGeoLocation(location: string): Observable <any> {
 
         if(this.isLocationCached(location)){
             return Observable.of(this.locationCache(this.camilize(location)));
