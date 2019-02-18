@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(config.DB_URI, { useCreateIndex: true,
     useNewUrlParser: true }).then(()=> {
     const fakeDb = new FakeDb();
-    fakeDb.seedDb();
+    //fakeDb.seedDb();
 });
 
 const app = express();
