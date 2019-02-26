@@ -12,6 +12,7 @@ const User = require('./models/user');
 
 const rentalRoutes = require('./routes/rentals'),
       userRoutes = require('./routes/users');
+      bookingRoutes = require('./routes/bookings');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB_URI, { useCreateIndex: true,
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/bookings', bookingRoutes);
 
 
 const PORT = process.env.PORT || 3001;
