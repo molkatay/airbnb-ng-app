@@ -24,6 +24,7 @@ const userSchema = mongoose.Schema({
         required: 'Password is required',
     },
     rentals:[{type: Schema.Types.ObjectId, ref: 'Rental'}],
+    bookings:[{type: Schema.Types.ObjectId, ref: 'Booking'}],
 });
 
 userSchema.methods.hasSamePassword = function(requestedPassword){

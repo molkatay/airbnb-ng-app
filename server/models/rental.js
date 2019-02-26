@@ -37,6 +37,7 @@ const rentalSchema = mongoose.Schema({
         default: Date.now
     },
     user:[{type: Schema.Types.ObjectId, ref: 'User'}],
+    bookings:[{type: Schema.Types.ObjectId, ref: 'Booking'}],
 
 });
 
